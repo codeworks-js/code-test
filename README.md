@@ -31,4 +31,8 @@ yarn storybook
 yarn build-storybook
 ``` 
 
-...
+## Maquettes
+
+Les maquettes du projet se trouvent [ici](https://drive.google.com/drive/folders/1kb9bP_4M63LNEIuRKFU1KDaJ73yJ-bXA?usp=sharing).
+
+Vous êtes libres de créer la votre en passant par des Issues. Elles seront la base des Issues pour développer les composants.
