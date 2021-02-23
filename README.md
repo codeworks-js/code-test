@@ -16,21 +16,24 @@ Les contributions sont libre mais doivent être proposées par PullRequests
 
 ```
 # intallation des dépendences
-yarn
+npm install
 # lancement en mode dev
-yarn start
+npm start
 # Build pour prod
-yarn build
+npm run build
 # Lancer les tests
-yarn test
+npm test
 # Génération des fichiers de configuration utilisés par la CLI de react-script
-yarn eject
+npm run eject
 # Lancer les storybooks
-yarn storybook
+npm run storybook
 # Builder une version statique, pour documentation par exemple
-yarn build-storybook
+npm run build-storybook
 ``` 
-
+pour ré-installer le projet de 0 c'est à dire plus reset du répertoire node_module
+```
+npm clean-install
+```
 ## Maquettes
 
 Les maquettes du projet se trouvent [ici](https://drive.google.com/drive/folders/1kb9bP_4M63LNEIuRKFU1KDaJ73yJ-bXA?usp=sharing).
