@@ -1,14 +1,15 @@
 import Tile from './Tile';
 
 export default {
+    title: 'Tile',
     component: Tile,
-    title: 'Tuile',
-    excludeStories: /.*Data$/
 };
 
-export const tileData = {
-    link: '/',
-    text: 'Un text'
-};
+const Template = (args) => <Tile {...args} />;
 
-export const Default = () => <Tile tile={{...tileData}} />;
+export const Default = Template.bind({});
+Default.args = {
+    subject: {
+        name: 'React',
+    },
+};
