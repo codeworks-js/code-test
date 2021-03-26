@@ -1,5 +1,4 @@
 import MenuLanguages from "./MenuLanguages";
-import Language from "../../atoms/Language/Language";
 
 export default {
     component: MenuLanguages,
@@ -10,7 +9,7 @@ const Template = args => <MenuLanguages {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-    itemsList: [
+    listLanguages: [
         {
             name: 'HTML5',
             text: 'Html5',

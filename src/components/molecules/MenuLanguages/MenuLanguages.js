@@ -10,23 +10,27 @@ const useStyles = makeStyles({
         flexWrap: 'wrap',
         justifyContent: 'space-around',
         overflow: 'hidden',
-        backgroundColor: '#6d6d6d',
+        paddingTop: '3rem',
     },
     gridList: {
         width: 500,
-        height: 450,
+        height: '100%',
     },
 });
 
-export default function (props) {
+export default function MenuLanguages (props) {
     const classes = useStyles();
-    const { itemsList } = props;
+    const { listLanguages } = props;
     return (
         <div className={classes.root}>
-            <GridList className={classes.gridList} cols={3}>
-                {itemsList.map(item => (
+            <GridList className={classes.gridList} cols={4}>
+                {listLanguages.map(item => (
                     <GridListTile key={item.name}>
-                        <Language name={item.name} text={item.text} icon={item.icon} color={item.color} />
+                        <Language 
+                            name={item.name} 
+                            text={item.text} 
+                            icon={item.icon} 
+                            color={item.color} />
                     </GridListTile>
                 ))}
             </GridList>

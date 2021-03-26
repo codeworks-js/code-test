@@ -29,7 +29,6 @@ const useStyles = makeStyles({
         },
     },
     legende: {
-        outline: '1px solid red',
         display: 'block',
         position: 'absolute',
         bottom: '0',
