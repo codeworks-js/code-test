@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import MenuLanguages from './components/molecules/MenuLanguages/MenuLanguages';
 import './App.css';
+import { Grid } from '@material-ui/core';
 
 function App() {
   const languages = [
@@ -28,14 +29,21 @@ function App() {
         <div className="App">
           <AppBar position="static">
             <Toolbar>
-              <Typography variant="h6">CodeTest</Typography>
-              <form>
-                <TextField 
-                  id="user-mail" 
-                  label="E mail" 
-                  type="email" 
-                  placeholder="Email" />
-              </form>
+              <Grid container justify="center" alignItems="center">
+                <Grid item xs={4}>
+                  <Typography variant="h6">CodeTest</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <form>
+                    <TextField 
+                      id="user-mail" 
+                      label="E mail" 
+                      type="email" 
+                      placeholder="Email" />
+                  </form>
+                </Grid>
+                <Grid item xs={4}></Grid>
+              </Grid>
             </Toolbar>
           </AppBar>
           <Container>

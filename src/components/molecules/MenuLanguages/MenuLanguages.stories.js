@@ -2,7 +2,7 @@ import MenuLanguages from "./MenuLanguages";
 
 export default {
     component: MenuLanguages,
-    title: 'Menu languages',
+    title: 'Molecules/Menu languages',
 };
 
 const Template = args => <MenuLanguages {...args} />;

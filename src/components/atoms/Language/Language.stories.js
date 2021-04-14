@@ -2,7 +2,7 @@ import Language from './Language';
 
 export default {
     component: Language,
-    title: 'Bouton langage',
+    title: 'Atoms/Bouton langage',
     excludeStories: /.*Data$/
 };
 

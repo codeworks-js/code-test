@@ -1,0 +1,151 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import Code from '../assets/stories/code-brackets.svg';
+import Colors from '../assets/stories/colors.svg';
+import Comments from '../assets/stories/comments.svg';
+import Direction from '../assets/stories/direction.svg';
+import Flow from '../assets/stories/flow.svg';
+import Plugin from '../assets/stories/plugin.svg';
+import Repo from '../assets/stories/repo.svg';
+import StackAlt from '../assets/stories/stackalt.svg';
+import screenHome from '../assets/stories/screen_home.codetest.jpg';
+import screenQuestion from '../assets/stories/screen_question.codetest.jpg';
+import screenResult from '../assets/stories/screen_result.codetest.jpg';
+import screenSelectUser from '../assets/stories/screen_select-user.codetest.jpg';
+import screenMail from '../assets/stories/screen_mail.codetest.jpg';
+
+<Meta title="Introduction" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 6px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .link-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: minmax(100px, auto);
+    row-gap: 10px;
+  }
+
+  @media (min-width: 620px) {
+    .link-list {
+      row-gap: 20px;
+      column-gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .link-item {
+    display: block;
+    padding: 20px 30px 20px 15px;
+    border: 1px solid #00000010;
+    border-radius: 5px;
+    transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+    color: #333333;
+  }
+
+  .link-item:hover {
+    border-color: #1EA7FD50;
+    transform: translate3d(0, -3px, 0);
+    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+  }
+
+  .link-item:active {
+    border-color: #1EA7FD;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .link-item strong {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+  
+  .link-item img {
+    width: 40%;
+    margin-left: 15px;
+  }
+
+  .link-item p {
+    font-size: 14px;
+    line-height: 20px;
+    display: block;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .screen-list img {
+    width: 20%;
+    margin-right: 15px;
+    flex: none;
+  }
+
+  
+`}</style>
+
+# Welcome to Storybook CodeTest
+
+<div className="subheading">Maquettes</div>
+
+<div className="link-list">
+  <div className="link-item">
+    <p>
+      <strong>Home Page</strong>
+      Description
+    </p>
+    <img src={screenHome} alt="" />
+  </div>
+  
+  <div className="link-item">
+    <strong>Page de question</strong>
+    <img src={screenQuestion} alt="" />
+  </div>
+  <div className="link-item">
+    <strong>Page de Recap</strong>
+    <img src={screenResult} alt="" />
+  </div>
+  <div className="link-item">
+    <strong>Page de recap avec select user</strong>
+    <img src={screenSelectUser} alt="" />
+  </div>
+  <div className="link-item">
+    <strong>Page de mail</strong>
+    <img src={screenMail} alt="" />
+  </div>
+</div>
+
+<div className="tip-wrapper">
+  <span className="tip">Tip</span>Edit the Markdown in{' '}
+  <code>src/components/Introduction.stories.mdx</code>
+</div>
