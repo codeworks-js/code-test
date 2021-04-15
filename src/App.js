@@ -8,6 +8,7 @@ import Container from '@material-ui/core/Container';
 import MenuLanguages from './components/molecules/MenuLanguages/MenuLanguages';
 import './App.css';
 import { Grid } from '@material-ui/core';
+import { useQuery, gql } from '@apollo/client';
 
 function App() {
   const languages = [
@@ -23,6 +24,24 @@ function App() {
     { name: 'DOCKER', text: 'Docker', icon: 'devicon-docker-plain', color: '#ffffff' },
     { name: 'GIT', text: 'Git', icon: 'devicon-git-plain', color: '#ffffff' }
   ];
+
+  const categories = gql`
+    query GetCategories { 
+      categories {
+        id
+        label
+        technologies {
+          id
+          label
+        }
+      }
+    }
+  `;
+
+  const { loading, error, data } = useQuery(categories);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>
 
   return (
       <React.Fragment>
@@ -48,6 +67,11 @@ function App() {
           </AppBar>
           <Container>
             <MenuLanguages listLanguages={languages}></MenuLanguages>
+            <ul>
+              {data.categories.map(({ id, label }) => (
+                <li key={id}>{label}</li>
+              ))}
+            </ul>
           </Container>
         </div>
       </React.Fragment>

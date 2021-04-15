@@ -5,11 +5,37 @@ import './index.css';
 import 'fontsource-roboto';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client/react';
+
+const client = new ApolloClient({
+  uri: 'https://code-test-back-service-tibbsrug5q-ew.a.run.app',
+  cache: new InMemoryCache()
+});
+
+// console.log('Apollo ', client);
+
+client.query({
+  query: gql`
+    query GetCategories { 
+      categories {
+        id
+        label
+        technologies {
+          id
+          label
+        }
+      }
+    }
+  `
+}).then(result => console.log(result));
 
 ReactDOM.render(
   <React.StrictMode>
-    <CssBaseline />
-    <App />
+    <ApolloProvider client={client}>
+      <CssBaseline />
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
