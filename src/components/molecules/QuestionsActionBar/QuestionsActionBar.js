@@ -31,5 +31,12 @@ QuestionsActionBar.propTypes = {
 	 * When we click on the 'wrong' button
 	 */
 	 onWrongAnswer: PropTypes.func,
-
+	 /**
+	 * When we click on the 'retry' button
+	 */
+	  onRetry: PropTypes.func,
+	  /**
+	 * When we click on the 'correct' button
+	 */
+	   onCorrectAnswer: PropTypes.func,
   };

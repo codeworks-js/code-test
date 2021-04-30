@@ -50,6 +50,7 @@ const QuestionButton = (props) => {
     <button
       type="button"
       className={`storybook-button ${classes.root}`}
+	  onClick={props.onClick}
     >
       <RenderIcon type={props.type}/>
     </button>
