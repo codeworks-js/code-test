@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 import 'devicon/devicon.css';
 
 const useStyles = makeStyles({
@@ -8,7 +8,8 @@ const useStyles = makeStyles({
         display: 'inline-block',
         height: '100px',
         width: '100px',
-        background: '#62a6d6',
+        //background: '#62a6d6',
+        background: props => props.theme.palette.primary.light,
         color: props => props.color,
         textAlign: 'center',
         verticalAlign: 'bottom',
@@ -37,7 +38,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Language (props) {
+function Language (props) {
     const classes = useStyles(props);
     const { name, text, icon } = props;
     return (
@@ -48,3 +49,5 @@ export default function Language (props) {
         </label>
     );
 }
+
+export default withTheme(Language);

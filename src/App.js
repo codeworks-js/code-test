@@ -1,16 +1,13 @@
 import React from 'react';
-//import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
+import { Header } from './components/organisms/Header/Header';
 import Container from '@material-ui/core/Container';
 import MenuLanguages from './components/molecules/MenuLanguages/MenuLanguages';
-import './App.css';
-import { Grid } from '@material-ui/core';
 import { useQuery, gql } from '@apollo/client';
+import { ThemeProvider, useTheme } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App() {
+  const theme = useTheme();
   const languages = [
     { name: 'HTML5', text: 'Html5', icon: 'devicon-html5-plain', color: '#ffffff' },
     { name: 'PYTHON', text: 'Python', icon: 'devicon-python-plain', color: '#ffffff', selected: true },
@@ -32,6 +29,7 @@ function App() {
         label
         technologies {
           id
+          image
           label
         }
       }
@@ -45,35 +43,29 @@ function App() {
 
   return (
       <React.Fragment>
-        <div className="App">
-          <AppBar position="static">
-            <Toolbar>
-              <Grid container justify="center" alignItems="center">
-                <Grid item xs={4}>
-                  <Typography variant="h6">CodeTest</Typography>
-                </Grid>
-                <Grid item xs={4}>
-                  <form>
-                    <TextField 
-                      id="user-mail" 
-                      label="E mail" 
-                      type="email" 
-                      placeholder="Email" />
-                  </form>
-                </Grid>
-                <Grid item xs={4}></Grid>
-              </Grid>
-            </Toolbar>
-          </AppBar>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Header />
           <Container>
             <MenuLanguages listLanguages={languages}></MenuLanguages>
             <ul>
-              {data.categories.map(({ id, label }) => (
-                <li key={id}>{label}</li>
+              {data.categories.map(({ id, label, technologies }) => (
+                <li key={id}>
+                  {label} 
+                  <ul>
+                  {technologies.map(({ id, label, image }) => (
+                    <li key={id}>
+                      {label}
+                      <img src={`data:image/png;base64,${image}`} alt="" />
+                    </li>
+                  ))}
+                  </ul>
+                  
+                </li>
               ))}
             </ul>
           </Container>
-        </div>
+        </ThemeProvider>
       </React.Fragment>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Page } from './Page';
-import * as HeaderStories from '../../molecules/Header/Header.stories';
+import * as HeaderStories from '../Header/Header.stories';
 
 export default {
   title: 'Organisms/Page',
