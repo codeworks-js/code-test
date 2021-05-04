@@ -8,6 +8,11 @@ Et pas seulement, nous allons également tester une méthodologie de développem
 
 Ce projet utilise [Material-UI](https://material-ui.com/fr/) comme framework de style. Ce framework utilise en interne CSS-in-js et les styled Components. Il propose une [api de Hook](https://material-ui.com/fr/styles/basics/#hook-api) ainsi qu'une [Api styled components](https://material-ui.com/fr/styles/basics/#styled-components-api).
 
+Le typage des données est prie en charge par TypeScript.
+
+Coté données nous utiliserons GraphQl associé au client React Apollo.
+
+Nous utilisons la commande codegen du client Apollo pour générer les types liés à l'API GraphQl.
 ## Contribuer
 
 Les contributions sont libre mais doivent être proposées par PullRequests
@@ -29,6 +34,8 @@ npm run eject
 npm run storybook
 # Builder une version statique, pour documentation par exemple
 npm run build-storybook
+# Générer les types de validation des données pour l'api GraphQl
+npm run typegen
 ``` 
 pour ré-installer le projet de 0 c'est à dire plus reset du répertoire node_module
 ```
