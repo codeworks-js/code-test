@@ -1,22 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { ApolloProvider } from '@apollo/client/react';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 
-import 'fontsource-roboto';
-
-const client = new ApolloClient({
-  uri: 'https://code-test-back-service-tibbsrug5q-ew.a.run.app',
-  cache: new InMemoryCache()
-});
-
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
