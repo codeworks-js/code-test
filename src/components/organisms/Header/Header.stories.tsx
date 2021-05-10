@@ -1,18 +1,17 @@
 import React from 'react';
+import { Meta, Story } from '@storybook/react';
 
-import { Header } from './Header';
+import { Header, Props } from './Header';
 
 export default {
   title: 'Organisms/Header',
   component: Header,
-};
+} as Meta;
 
-const Template = (args) => <Header {...args} />;
+const Template: Story<Props> = (args) => <Header {...args} />;
 
 export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {},
-};
+LoggedIn.args = {};
 
 export const LoggedOut = Template.bind({});
 LoggedOut.args = {};

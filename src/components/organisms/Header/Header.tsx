@@ -15,7 +15,7 @@ import {
 import Brightness7Icon from "@material-ui/icons/Brightness7";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
 
-interface Props {
+export interface Props {
   toggleTheme: () => void;
   useDefaultTheme: boolean;
 }

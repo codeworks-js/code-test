@@ -6,9 +6,9 @@ export const CATEGORIES = gql`
         id
         label
         technologies {
-        id
-        image
-        label
+            id
+            image
+            label
         }
     }
     }
