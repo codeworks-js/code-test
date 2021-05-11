@@ -4,7 +4,7 @@ import { Page } from './Home';
 import * as HeaderStories from '../../components/organisms/Header/Header.stories';
 
 export default {
-  title: 'Organisms/Page',
+  title: 'Pages/Home',
   component: Page,
 };
 

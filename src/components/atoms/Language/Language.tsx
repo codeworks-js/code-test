@@ -12,14 +12,21 @@ export interface Props {
 const useStyles = makeStyles((theme: Theme) => 
     createStyles({
         root: {
-            background: (props: Props) => props.selected ? theme.palette.primary.dark : theme.palette.primary.light,
-            // color: props => props.color,
+            background: (props: Props) => props.selected ? theme.palette.primary.main : theme.palette.primary.light,
+            color: () => theme.palette.primary.contrastText,
             border: '0 none',
             textAlign: 'center',
             verticalAlign: 'bottom',
+            height: '100px',
+            width: '100px',
             '& img': {
-                maxWidth: '100%',
+                maxWidth: '70%',
+                margin: 'auto',
             },
+        },
+        legend: {
+            paddingTop: () => theme.spacing(0.7),
+            fontSize: '120%',
         },
     })
 );
@@ -27,15 +34,16 @@ const useStyles = makeStyles((theme: Theme) =>
 function Language (props: Props) {
     const classes = useStyles(props);
     const { 
-        // id, 
+        id,
         image, 
         text, 
     } = props;
+    const btnId = React.useRef(null);
     return (
         <>
-            <button className={classes.root}>
+            <button className={classes.root} ref={btnId}>
                 <img src={`data:image/png;base64,${image}`} alt="" />
-                <span>{text}</span>
+                <div className={classes.legend}>{text}</div>
             </button>
         </>
     );

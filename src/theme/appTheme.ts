@@ -4,6 +4,11 @@ import { createMuiTheme, Theme } from '@material-ui/core/styles';
 export const lightTheme: Theme = createMuiTheme({
     palette: {
         type: 'light',
+        primary: {
+            main: blue[500],
+            light: blue[200],
+            dark: blue[700],
+        },
     },
 });
 
