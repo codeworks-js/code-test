@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core/styles';
 import { lightTheme, darkTheme } from './theme/appTheme';
 import Layout from './components/organisms/Layout/Layout';
-import { Home } from './pages/Home/Home';
+import Home from './pages/Home/Home';
 import 'fontsource-roboto';
 
 const AppContext = React.createContext(null);
@@ -28,7 +28,7 @@ function App() {
                 <Home />
               </Layout>
             </ThemeProvider>
-            </ApolloProvider>
+          </ApolloProvider>
         </AppContext.Provider>
       </React.Fragment>
   );

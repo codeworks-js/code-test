@@ -1,14 +1,14 @@
 import { Meta, Story } from '@storybook/react';
 import { CATEGORIES } from '../../../queries/categories';
 import { categories } from '../../../mocks/categories';
-import MenuLanguages from "./MenuLanguages";
+import MenuTechnos from "./MenuTechnos";
 
 export default {
-    component: MenuLanguages,
+    component: MenuTechnos,
     title: 'Molecules/Menu languages',
 } as Meta;
 
-const Template: Story = args => <MenuLanguages {...args} />;
+const Template: Story = args => <MenuTechnos {...args} />;
 
 export const Default = Template.bind({});
 Default.parameters = {

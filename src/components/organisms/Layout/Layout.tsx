@@ -15,9 +15,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     content: {
       flexGrow: 1,
-      padding: theme.spacing(3),
       minHeight: `calc(100vh - 30px)`,
-      background: theme.palette.background.paper,
+      maxWidth: '80%',
+      padding: theme.spacing(3),
+      margin: '0 auto',
+      marginTop: '70px',
     },
     toolbar: {
       ...theme.mixins.toolbar,

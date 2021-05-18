@@ -1,17 +1,16 @@
 import React from 'react';
-
-
-import './home.css';
+import { CssBaseline } from "@material-ui/core";
 
 import Container from '@material-ui/core/Container';
-import MenuLanguages from '../../components/molecules/MenuLanguages/MenuLanguages';
+import MenuTechnos from '../../components/molecules/MenuTecnnos/MenuTechnos';
 
-export const Home = () => (
+const Home = () => (
   <article>
-    <section>
-      <Container>
-        <MenuLanguages />
-      </Container>
-    </section>
+    <CssBaseline/>
+    <Container>
+      <MenuTechnos/>
+    </Container>
   </article>
 );
+
+export default Home;
